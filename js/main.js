@@ -179,18 +179,27 @@
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
+      const name = (contactForm.querySelector('#name') || {}).value || '';
+      const email = (contactForm.querySelector('#email') || {}).value || '';
+      const subject = (contactForm.querySelector('#subject') || {}).value || 'Message from Portfolio';
+      const message = (contactForm.querySelector('#message') || {}).value || '';
+
+      const body = encodeURIComponent(
+        'From: ' + name + ' <' + email + '>\n\n' + message
+      );
+      const mailtoLink = 'mailto:emmanueldjegou5@gmail.com'
+        + '?subject=' + encodeURIComponent(subject)
+        + '&body=' + body;
+
+      window.location.href = mailtoLink;
+
       const btn = contactForm.querySelector('button[type="submit"]');
       const originalText = btn.innerHTML;
-      btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-      btn.style.background = '#22c55e';
-      btn.style.color = 'white';
+      btn.innerHTML = '<i class="fas fa-check"></i> Opening Mail Client...';
       btn.disabled = true;
       setTimeout(function () {
         btn.innerHTML = originalText;
-        btn.style.background = '';
-        btn.style.color = '';
         btn.disabled = false;
-        contactForm.reset();
       }, 3000);
     });
   }
