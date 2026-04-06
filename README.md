@@ -10,7 +10,7 @@ Personal academic and professional portfolio for **Emmanuel Djegou**, PhD Candid
 
 This site showcases my research, industry experience, applied projects, awards, and contact information. It is built with pure HTML, CSS, and vanilla JavaScript — no frameworks, no build tools — and is hosted on GitHub Pages.
 
-**Expertise:** Survival Analysis · Deep Learning · Recurrent Event Modeling · Joint Models · Bayesian Methods
+**Expertise:** Survival Analysis · Deep Learning · Recurrent Event Modeling · Joint Modeling · Bayesian Methods · Meta Analysis
 
 ---
 
